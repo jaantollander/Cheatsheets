@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Discrete-Time &mdash; cheatsheet - documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="cheatsheet - documentation" href="../../index.html"/>
+        <link rel="up" title="Markov Chains" href="index.html"/>
+        <link rel="next" title="Continuous-Time" href="continuous_time.html"/>
+        <link rel="prev" title="Markov Chains" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> cheatsheet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                -
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Markov Chains</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Discrete-Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#time-homogenous-processes">Time Homogenous Processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markov-property">Markov Property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transition-matrix">Transition Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#marginal-distribution">Marginal Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transition-probability">Transition Probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-number-of-visits">Expected Number of Visits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limiting-distribution">Limiting Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-number-of-hits">Expected Number of Hits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#travel-time">Travel Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hitting-probability">Hitting Probability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reversibility">Reversibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="continuous_time.html">Continuous-Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../martingales.html">Martingales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">cheatsheet</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Markov Chains</a> &raquo;</li>
+      
+    <li>Discrete-Time</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/probability/markov_chains/discrete_time.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="discrete-time">
+<h1>Discrete-Time<a class="headerlink" href="#discrete-time" title="Permalink to this headline">¶</a></h1>
+<p>A discrete-time Markov chain is sequence of random variables</p>
+<div class="math">
+\[(X_t)_{t \geq 0}.\]</div>
+<p>Possible values of <span class="math">\(X_i\)</span> form a finite or countable <strong>state space</strong> <span class="math">\(S\)</span>.</p>
+<div class="section" id="time-homogenous-processes">
+<h2>Time Homogenous Processes<a class="headerlink" href="#time-homogenous-processes" title="Permalink to this headline">¶</a></h2>
+<p>Time-homogeneous Markov chains (or stationary Markov chains) are processes where</p>
+<div class="math">
+\[\Pr(X_{n+1}=x\mid X_{n}=y)=\Pr(X_{n}=x\mid X_{n-1}=y)\,\]</div>
+<p>for all <span class="math">\(n\)</span>. The probability of the transition is independent of <span class="math">\(n\)</span>.</p>
+</div>
+<div class="section" id="markov-property">
+<h2>Markov Property<a class="headerlink" href="#markov-property" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\begin{split}\Pr(X_{n+1}=x\mid X_{1}=x_{1},X_{2}=x_{2},\ldots ,X_{n}=x_{n})= \\
+\Pr(X_{n+1}=x\mid X_{n}=x_{n})\end{split}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="transition-matrix">
+<h2>Transition Matrix<a class="headerlink" href="#transition-matrix" title="Permalink to this headline">¶</a></h2>
+<p>For <span class="math">\(i, j \in S\)</span></p>
+<div class="math">
+\[\begin{split}P(i, j) &amp;\geq 0 \\
+\sum_{j \in S} P(i, j) &amp;= 1\end{split}\]</div>
+<p>Function definition</p>
+<div class="math">
+\[P : S \times S \to [0, 1]\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="marginal-distribution">
+<h2>Marginal Distribution<a class="headerlink" href="#marginal-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\boldsymbol{\mu}_{n}(j) = \sum_{i \in S} \boldsymbol{\mu}_{0}(i) P^{n}(i, j)\]</div>
+<p>In vector form</p>
+<div class="math">
+\[\boldsymbol{\mu}_n = \boldsymbol{\mu}_0 P^{n}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="transition-probability">
+<h2>Transition Probability<a class="headerlink" href="#transition-probability" title="Permalink to this headline">¶</a></h2>
+<p>Probability of going from state <span class="math">\(i\)</span> to <span class="math">\(j\)</span> in <span class="math">\(n\)</span> timesteps</p>
+<div class="math">
+\[\Pr(X_{n}=j\mid X_{0}=i) = P^{n}(i, j)\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="expected-number-of-visits">
+<h2>Expected Number of Visits<a class="headerlink" href="#expected-number-of-visits" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[M_t(i, j) = \sum_{s = 0}^{t} P^{s}(i, j)\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="limiting-distribution">
+<h2>Limiting Distribution<a class="headerlink" href="#limiting-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Also stationary distribution for finite Markov chains.</p>
+<div class="math">
+\[\boldsymbol{\pi}(j) = \sum_{i \in S} \boldsymbol{\pi}(i) P(i, j)\]</div>
+<p>In vector form</p>
+<div class="math">
+\[\boldsymbol{\pi} = \boldsymbol{\pi} P\]</div>
+<p>and</p>
+<div class="math">
+\[\sum_{i \in S} \boldsymbol{\pi}(i) = 1\]</div>
+</div>
+<div class="section" id="expected-number-of-hits">
+<h2>Expected Number of Hits<a class="headerlink" href="#expected-number-of-hits" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[g_n(i) = \sum_{j \in S} M_{n} (i, j) c(j)\]</div>
+<p>In vector form</p>
+<div class="math">
+\[g_{n} = M_{n} c\]</div>
+<p>where <span class="math">\(c(i)\)</span> is the cost of hitting node <span class="math">\(i\)</span></p>
+<hr class="docutils" />
+<p>Expected number of hits a the long run</p>
+<div class="math">
+\[g(i) = \sum_{j \in S} \boldsymbol{\pi}(j) c(j)\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="travel-time">
+<h2>Travel Time<a class="headerlink" href="#travel-time" title="Permalink to this headline">¶</a></h2>
+<p>To group <span class="math">\(A\)</span></p>
+<div class="math">
+\[T_A = \min\{t \geq 0 : X_{t} \in A\}\]</div>
+<p>Collection of expected travel times</p>
+<div class="math">
+\[\begin{split}\begin{cases}
+f(i) = 1 + \sum_{y \notin A} P(i, j) f(j) &amp; i \notin A \\
+f(i) = 0 &amp; i \in A
+\end{cases}\end{split}\]</div>
+<p>smallest non-negative solution.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="hitting-probability">
+<h2>Hitting Probability<a class="headerlink" href="#hitting-probability" title="Permalink to this headline">¶</a></h2>
+<p>Group <span class="math">\(A\)</span></p>
+<div class="math">
+\[\begin{split}\begin{cases}
+f(i) = \sum_{y \notin A} P(i, j) f(j) &amp; i \notin A \\
+f(i) = 1 &amp; i \in A
+\end{cases}\end{split}\]</div>
+<p>smallest non-negative solution.</p>
+</div>
+<div class="section" id="reversibility">
+<h2>Reversibility<a class="headerlink" href="#reversibility" title="Permalink to this headline">¶</a></h2>
+<p>A Markov chain is said to be <strong>reversible</strong> if there is a probability distribution <span class="math">\(\boldsymbol{\pi}\)</span>  over its states such that</p>
+<div class="math">
+\[\boldsymbol{\pi}(i) P(i, j) = \boldsymbol{\pi}(j)P(j, i), \quad \forall x, y \in S\]</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="continuous_time.html" class="btn btn-neutral float-right" title="Continuous-Time" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Markov Chains" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Jaan Tollander de Balsch.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'-',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

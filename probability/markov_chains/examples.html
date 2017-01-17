@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; cheatsheet - documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="cheatsheet - documentation" href="../../index.html"/>
+        <link rel="up" title="Markov Chains" href="index.html"/>
+        <link rel="next" title="Martingales" href="../martingales.html"/>
+        <link rel="prev" title="Properties" href="properties.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> cheatsheet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                -
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Markov Chains</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="discrete_time.html">Discrete-Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="continuous_time.html">Continuous-Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#birth-and-death-chains">Birth-and-Death Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#branching-process-galton-watson">Branching Process (Galton-Watson)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../martingales.html">Martingales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">cheatsheet</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Markov Chains</a> &raquo;</li>
+      
+    <li>Examples</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/probability/markov_chains/examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="birth-and-death-chains">
+<h2>Birth-and-Death Chains<a class="headerlink" href="#birth-and-death-chains" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\gamma_{i+1} \pi(i + 1) = \beta_{x} \pi(i), \quad i \in 0, 1, 2,...\]</div>
+<p>where</p>
+<ul class="simple">
+<li><span class="math">\(\beta_{i} = \Pr(i, i+1)\)</span> is probability of birth</li>
+<li><span class="math">\(\gamma_{i} = \Pr(i, i-1)\)</span> is probability of death</li>
+<li><span class="math">\(1 - \beta_{i} - \gamma_{i}\)</span> is probability of being still</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="branching-process-galton-watson">
+<h2>Branching Process (Galton-Watson)<a class="headerlink" href="#branching-process-galton-watson" title="Permalink to this headline">¶</a></h2>
+<p>Genereting Functions</p>
+<div class="math">
+\[\phi : [-1, 1] \to \mathbb{R}\]</div>
+<div class="math">
+\[\phi_{Y}(s) = E(s^Y) = \sum_{k=0}^{\infty} s^{k} p(k)\]</div>
+<p>For independent random variables <span class="math">\(X\)</span> and <span class="math">\(Y\)</span></p>
+<div class="math">
+\[\phi_{X + Y}(s) = \phi_{X}(s) \phi_{Y}(s)\]</div>
+<p>Expected population size</p>
+<p>Probability of extinction: Smallest non-negative solution for</p>
+<div class="math">
+\[\phi_{Y_{1}}(s) = s\]</div>
+<hr class="docutils" />
+<p>Constant rate <span class="math">\(\alpha\)</span></p>
+<div class="math">
+\[P_{t}(i, j) = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} P_{*}^{n}(i, j)\]</div>
+<hr class="docutils" />
+<p>Non-constant rate <span class="math">\(\lambda(i)\leq \alpha\)</span></p>
+<div class="math">
+\[P_t = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} \hat{P}^{n}(i, j)\]</div>
+<div class="math">
+\[\hat{P}^{n}(i, j) = \frac{\lambda(i)}{\alpha} P_{*}(i, j) + \left( 1 - \frac{\lambda(i)}{\alpha} \right) I(i, j)\]</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../martingales.html" class="btn btn-neutral float-right" title="Martingales" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="properties.html" class="btn btn-neutral" title="Properties" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Jaan Tollander de Balsch.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'-',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

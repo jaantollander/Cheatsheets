@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Continuous-Time &mdash; cheatsheet - documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="cheatsheet - documentation" href="../../index.html"/>
+        <link rel="up" title="Markov Chains" href="index.html"/>
+        <link rel="next" title="Properties" href="properties.html"/>
+        <link rel="prev" title="Discrete-Time" href="discrete_time.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> cheatsheet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                -
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Markov Chains</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="discrete_time.html">Discrete-Time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous-Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definitions">Definitions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jump-chain-holding-time">Jump Chain / Holding Time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-probability">Transition Probability</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stationary-distribution">Stationary Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-number-of-visits">Expected Number of Visits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-number-of-hits">Expected Number of Hits</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../martingales.html">Martingales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">cheatsheet</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Markov Chains</a> &raquo;</li>
+      
+    <li>Continuous-Time</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/probability/markov_chains/continuous_time.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="continuous-time">
+<h1>Continuous-Time<a class="headerlink" href="#continuous-time" title="Permalink to this headline">¶</a></h1>
+<p>A continuous-time Markov chain <span class="math">\((X_t)_{t \geq 0}\)</span> is defined by a finite or countable state space <span class="math">\(S\)</span>.</p>
+<p><strong>Transition rate matrix</strong> <span class="math">\(Q\)</span> with dimensions equal to that of the state space and initial probability distribution defined on the state space</p>
+<p><strong>Rate of the process transitions</strong> from state <span class="math">\(i\)</span> to <span class="math">\(j\)</span> is described by the elements of matrix <span class="math">\(Q\)</span></p>
+<div class="math">
+\[Q(i, j) &gt; 0, \quad i \neq j\]</div>
+<p>The elements are chosen such that each row of the transition rate matrix sums to zero.</p>
+<div class="math">
+\[\sum_{j \in S} Q(i, j) = 0\]</div>
+<div class="section" id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jump-chain-holding-time">
+<h3>Jump Chain / Holding Time<a class="headerlink" href="#jump-chain-holding-time" title="Permalink to this headline">¶</a></h3>
+<p>Define a discrete-time Markov chain <span class="math">\(Y_n\)</span> to describe the <span class="math">\(n\)</span> th jump of the process and variables</p>
+<div class="math">
+\[S_1, S_2, S_3, \ldots\]</div>
+<p>to describe holding times in each of the states where <span class="math">\(S_i\)</span> follows the exponential distribution with rate parameter <span class="math">\(\lambda = -Q(Y_i, Y_j)\)</span></p>
+<div class="math">
+\[S_i \sim \operatorname{Exp}(\lambda).\]</div>
+</div>
+<div class="section" id="transition-probability">
+<h3>Transition Probability<a class="headerlink" href="#transition-probability" title="Permalink to this headline">¶</a></h3>
+<p>For any value <span class="math">\(n = 0, 1, 2, \ldots\)</span> and times indexed up to this value of <span class="math">\(t_0, t_1, t_2, \ldots\)</span> and all states recorded at these times <span class="math">\(i_0, i_1, i_2, \ldots\)</span> it holds that</p>
+<div class="math">
+\[\Pr(X_{t_{n+1}} = i_{n+1} | X_{t_0} = i_0 , X_{t_1} = i_1 , \ldots, X_{t_n} = i_n ) = p_{i_n i_{n+1}}( t_{n+1} - t_n)\]</div>
+<p>where <span class="math">\(p_{ij}\)</span> is the solution of the forward equation (a first-order differential equation)</p>
+<div class="math">
+\[\begin{split}\begin{cases}
+P'(t) = P(t) Q \\
+P(0) = \mathbf{I}
+\end{cases}\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="stationary-distribution">
+<h2>Stationary Distribution<a class="headerlink" href="#stationary-distribution" title="Permalink to this headline">¶</a></h2>
+<p>In vector form</p>
+<div class="math">
+\[\boldsymbol{\pi} = \boldsymbol{\pi} P\]</div>
+<p>and</p>
+<div class="math">
+\[\begin{split}\sum_{i \in S} \boldsymbol{\pi}(i) = 1 \\
+\boldsymbol{\pi} Q = 0\end{split}\]</div>
+</div>
+<div class="section" id="expected-number-of-visits">
+<h2>Expected Number of Visits<a class="headerlink" href="#expected-number-of-visits" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[M_t(i, j) = \int_{0}^{t}P_s(i, j)d\,ds\]</div>
+</div>
+<div class="section" id="expected-number-of-hits">
+<h2>Expected Number of Hits<a class="headerlink" href="#expected-number-of-hits" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[g_n(i) = \sum_{j \in S} M_{n} (i, j) c(j)\]</div>
+<p>In vector form</p>
+<div class="math">
+\[g_{n} = M_{n} c\]</div>
+<p>where <span class="math">\(c(i)\)</span> is the cost of hitting node <span class="math">\(i\)</span></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="properties.html" class="btn btn-neutral float-right" title="Properties" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="discrete_time.html" class="btn btn-neutral" title="Discrete-Time" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Jaan Tollander de Balsch.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'-',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
