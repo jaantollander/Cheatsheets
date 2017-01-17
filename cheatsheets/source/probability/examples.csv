@@ -1,0 +1,8 @@
+Coin Toss,,Markov Chain
+,p = 1/2,Martingale
+,p < 1/2,Supermartingale
+,p > 1/2,Submartingale
+,,
+Drawing objects without replacement,,Not a Markov Chain
+,Fair,Martingale
+,Non Fair,Not a Martingale

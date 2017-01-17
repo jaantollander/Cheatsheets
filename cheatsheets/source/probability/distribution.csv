@@ -1,0 +1,19 @@
+Uniform (Continuous),,,
+,Parameters,":math:`-\infty <a<b<\infty \,`",
+,Support,":math:`x \in [a, b]`",
+,PDF,":math:`{\begin{cases}{\frac {1}{b-a}}&{\text{for }}x\in [a,b]\\0&{\text{otherwise}}\end{cases}}`",
+,CDF,":math:`{\begin{cases}0&{\text{for }}x<a\\{\frac {x-a}{b-a}}&{\text{for }}x\in [a,b)\\1&{\text{for }}x\geq b\end{cases}}`",
+,Mean,:math:`{\tfrac {1}{2}}(a+b)`,
+Geometric,,,
+,Parameters,:math:`0 < p \leq 1`,:math:`0 < p \leq 1`
+,Support,":math:`k \in \{1, 2, 3, \ldots\}`",":math:`k \in \{0, 1, 2,  \ldots\}`"
+,PMF,":math:`(1-p)^{k-1}\,p\!`",":math:`(1-p)^{k}\,p\!`"
+,CDF,:math:`1 - (1- p)^{k}`,:math:`1 - (1- p)^{k+1}`
+,Mean,:math:`\frac{1}{p}`,:math:`\frac{1 - p}{p}`
+Exponential,,,
+,Parameters,:math:`\lambda > 0`,
+,Support,":math:`x \in [0, \infty)`",
+,PDF,:math:`\lambda \exp(-\lambda x)`,
+,CDF,:math:`1 -  \exp(-\lambda x)`,
+,Mean,:math:`\frac{1}{\lambda}`,
+,Memorylessness,":math:`\Pr \left (T > s + t | T > s \right ) = \Pr(T > t), \qquad \forall s, t \ge 0`",

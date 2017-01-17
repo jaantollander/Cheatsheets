@@ -1,0 +1,42 @@
+Markov chains:
+  discrete-time:
+  continuous-time:
+  finite-state-space:
+  infinite-state-space:
+  time-homogenous:
+
+  transient-evolution:
+
+  properties:
+    markov-property:
+    reducibility:
+    periodicity:
+    transience & recurrence:
+      mean recurrence time:
+      excpected number of visits:
+      absorbing states:
+    ergodicity:
+    steady-state analysis & limiting distributions:
+      time-inhomogenous markov chain:
+
+  finite state space:
+  reversible markov chain:
+  stationary distribution:
+  hitting times:
+
+  examples:
+
+
+Martingales:
+  definition:
+  sub-martingale:
+  super-martingale:
+  examples:
+
+Poisson-process:
+
+Distributions:
+  Uniform:
+  Exponential:
+  Poisson:
+  Binomial:
