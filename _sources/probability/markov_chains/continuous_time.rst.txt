@@ -53,25 +53,71 @@ where :math:`p_{ij}` is the solution of the forward equation (a first-order diff
    \end{cases}
 
 
+Transition Probability
+----------------------
+
+Constant Rate
+^^^^^^^^^^^^^
+For constant holding time rate rate of :math:`\alpha` transition probability takes form
+
+.. math::
+   P_{t}(i, j) = \sum_{n=0}^{\infty} \exp{(-\alpha t)} \frac{(\alpha t)^{n}}{n!} P_{*}^{n}(i, j)
+
+where
+
+.. math::
+
+   P_ {*}(x, y)
+
+is matrix of the jump probabilities.
+
+
+General Case
+^^^^^^^^^^^^
+General case for non constant rate :math:`\alpha`
+
+.. math::
+   P_t(i, j) = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} \hat{P}^{n}(i, j)
+
+where
+
+.. math::
+   \hat{P}^{n}(i, j) = \frac{\lambda(i)}{\alpha} P_{*}(i, j) + \left( 1 - \frac{\lambda(i)}{\alpha} \right) I(i, j)
+
+
+Generator Matrix
+^^^^^^^^^^^^^^^^
+Transition probabilities from generator matrix
+
+.. math::
+
+   P_t = \exp{(t Q)} = \sum_{n=0}^{\infty} \frac{t^n}{n!} Q^n
+
+
 Stationary Distribution
 -----------------------
+
+.. math::
+
+   \sum_{x\in S} \boldsymbol{\pi}(x)Q(x, y) = 0, \quad y \in S
+
 In vector form
 
 .. math::
-   \boldsymbol{\pi} = \boldsymbol{\pi} P
+   \boldsymbol{\pi} Q = 0
 
 and
 
 .. math::
    \sum_{i \in S} \boldsymbol{\pi}(i) = 1 \\
-   \boldsymbol{\pi} Q = 0
+
 
 Expected Number of Visits
 -------------------------
 
 .. math::
 
-   M_t(i, j) = \int_{0}^{t}P_s(i, j)d\,ds
+   M_t(i, j) = \int_{0}^{t}P_s(i, j)\,ds
 
 
 Expected Number of Hits

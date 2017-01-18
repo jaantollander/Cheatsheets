@@ -10,11 +10,17 @@ Definition
 
 ----
 
-Supermartingale
+Submartingale
+
+.. math::
+   E(X_{n+1} \mid X_{1, \ldots, X_{n}}) \geq X_{n}
 
 ----
 
-Submartingale
+Supermartingale
+
+.. math::
+   E(X_{n+1} \mid X_{1, \ldots, X_{n}}) \leq X_{n}
 
 ----
 

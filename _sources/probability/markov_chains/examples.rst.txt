@@ -43,18 +43,3 @@ Probability of extinction: Smallest non-negative solution for
 ----
 
 
-Constant rate :math:`\alpha`
-
-.. math::
-   P_{t}(i, j) = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} P_{*}^{n}(i, j)
-
-----
-
-Non-constant rate :math:`\lambda(i)\leq \alpha`
-
-.. math::
-   P_t = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} \hat{P}^{n}(i, j)
-
-.. math::
-   \hat{P}^{n}(i, j) = \frac{\lambda(i)}{\alpha} P_{*}(i, j) + \left( 1 - \frac{\lambda(i)}{\alpha} \right) I(i, j)
-

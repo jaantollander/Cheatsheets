@@ -94,6 +94,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#transition-probability">Transition Probability</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Transition Probability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constant-rate">Constant Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-case">General Case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generator-matrix">Generator Matrix</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#stationary-distribution">Stationary Distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#expected-number-of-visits">Expected Number of Visits</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#expected-number-of-hits">Expected Number of Hits</a></li>
@@ -186,20 +192,49 @@ P(0) = \mathbf{I}
 \end{cases}\end{split}\]</div>
 </div>
 </div>
+<div class="section" id="id1">
+<h2>Transition Probability<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="constant-rate">
+<h3>Constant Rate<a class="headerlink" href="#constant-rate" title="Permalink to this headline">¶</a></h3>
+<p>For constant holding time rate rate of <span class="math">\(\alpha\)</span> transition probability takes form</p>
+<div class="math">
+\[P_{t}(i, j) = \sum_{n=0}^{\infty} \exp{(-\alpha t)} \frac{(\alpha t)^{n}}{n!} P_{*}^{n}(i, j)\]</div>
+<p>where</p>
+<div class="math">
+\[P_ {*}(x, y)\]</div>
+<p>is matrix of the jump probabilities.</p>
+</div>
+<div class="section" id="general-case">
+<h3>General Case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
+<p>General case for non constant rate <span class="math">\(\alpha\)</span></p>
+<div class="math">
+\[P_t(i, j) = \sum_{n=0}^{\infty} \exp{-\alpha t} \frac{(\alpha t)^{n}}{n!} \hat{P}^{n}(i, j)\]</div>
+<p>where</p>
+<div class="math">
+\[\hat{P}^{n}(i, j) = \frac{\lambda(i)}{\alpha} P_{*}(i, j) + \left( 1 - \frac{\lambda(i)}{\alpha} \right) I(i, j)\]</div>
+</div>
+<div class="section" id="generator-matrix">
+<h3>Generator Matrix<a class="headerlink" href="#generator-matrix" title="Permalink to this headline">¶</a></h3>
+<p>Transition probabilities from generator matrix</p>
+<div class="math">
+\[P_t = \exp{(t Q)} = \sum_{n=0}^{\infty} \frac{t^n}{n!} Q^n\]</div>
+</div>
+</div>
 <div class="section" id="stationary-distribution">
 <h2>Stationary Distribution<a class="headerlink" href="#stationary-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\sum_{x\in S} \boldsymbol{\pi}(x)Q(x, y) = 0, \quad y \in S\]</div>
 <p>In vector form</p>
 <div class="math">
-\[\boldsymbol{\pi} = \boldsymbol{\pi} P\]</div>
+\[\boldsymbol{\pi} Q = 0\]</div>
 <p>and</p>
 <div class="math">
-\[\begin{split}\sum_{i \in S} \boldsymbol{\pi}(i) = 1 \\
-\boldsymbol{\pi} Q = 0\end{split}\]</div>
+\[\begin{split}\sum_{i \in S} \boldsymbol{\pi}(i) = 1 \\\end{split}\]</div>
 </div>
 <div class="section" id="expected-number-of-visits">
 <h2>Expected Number of Visits<a class="headerlink" href="#expected-number-of-visits" title="Permalink to this headline">¶</a></h2>
 <div class="math">
-\[M_t(i, j) = \int_{0}^{t}P_s(i, j)d\,ds\]</div>
+\[M_t(i, j) = \int_{0}^{t}P_s(i, j)\,ds\]</div>
 </div>
 <div class="section" id="expected-number-of-hits">
 <h2>Expected Number of Hits<a class="headerlink" href="#expected-number-of-hits" title="Permalink to this headline">¶</a></h2>
