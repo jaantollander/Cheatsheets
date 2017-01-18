@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Examples &mdash; cheatsheet - documentation</title>
+  <title>Poisson Process &mdash; cheatsheet - documentation</title>
   
 
   
@@ -34,7 +34,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="cheatsheet - documentation" href="../index.html"/>
-        <link rel="prev" title="Distributions" href="distributions.html"/> 
+        <link rel="next" title="Distributions" href="distributions.html"/>
+        <link rel="prev" title="Martingales" href="martingales.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -86,9 +87,12 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="markov_chains/index.html">Markov Chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="martingales.html">Martingales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poisson_process.html">Poisson Process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Poisson Process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition">Definition</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="distributions.html">Distributions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
             
@@ -119,11 +123,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Examples</li>
+    <li>Poisson Process</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/probability/examples.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/probability/poisson_process.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -133,49 +137,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Coin Toss</td>
-<td>&nbsp;</td>
-<td>Markov Chain</td>
-</tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>p = 1/2</td>
-<td>Martingale</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>p &lt; 1/2</td>
-<td>Supermartingale</td>
-</tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>p &gt; 1/2</td>
-<td>Submartingale</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>Drawing objects without replacement</td>
-<td>&nbsp;</td>
-<td>Not a Markov Chain</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>Fair</td>
-<td>Martingale</td>
-</tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>Non Fair</td>
-<td>Not a Martingale</td>
-</tr>
-</tbody>
-</table>
+  <div class="section" id="poisson-process">
+<h1>Poisson Process<a class="headerlink" href="#poisson-process" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>Definition of Poisson process with rate of <span class="math">\(\lambda\)</span></p>
+<p>For independent random variables (time between arrivals)</p>
+<div class="math">
+\[\tau_i \sim \operatorname{Exp}(\lambda)\]</div>
+<p>Let (arrival time of <span class="math">\(n\)</span> th customer)</p>
+<div class="math">
+\[\begin{split}\begin{cases}
+T_n = \tau_1 + \ldots + \tau_n, &amp; n \geq 1 \\
+T_0 = 0
+\end{cases}\end{split}\]</div>
+<p>Define (number of arrivals by time <span class="math">\(s\)</span>)</p>
+<div class="math">
+\[N(s) = \max\{n : T_n \leq s\}\]</div>
+<div class="math">
+\[N(s) \sim \operatorname{Poi}(\lambda)\]</div>
+</div>
 </div>
 
 
@@ -185,8 +166,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="distributions.html" class="btn btn-neutral float-right" title="Distributions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="distributions.html" class="btn btn-neutral" title="Distributions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="martingales.html" class="btn btn-neutral" title="Martingales" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

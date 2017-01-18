@@ -1,0 +1,33 @@
+Poisson Process
+===============
+
+Definition
+----------
+Definition of Poisson process with rate of :math:`\lambda`
+
+For independent random variables (time between arrivals)
+
+.. math::
+
+   \tau_i \sim \operatorname{Exp}(\lambda)
+
+Let (arrival time of :math:`n` th customer)
+
+.. math::
+
+   \begin{cases}
+   T_n = \tau_1 + \ldots + \tau_n, & n \geq 1 \\
+   T_0 = 0
+   \end{cases}
+
+Define (number of arrivals by time :math:`s`)
+
+.. math::
+
+   N(s) = \max\{n : T_n \leq s\}
+
+.. math::
+
+   N(s) \sim \operatorname{Poi}(\lambda)
+
+

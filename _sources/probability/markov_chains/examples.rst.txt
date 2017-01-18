@@ -38,8 +38,3 @@ Probability of extinction: Smallest non-negative solution for
 
 .. math::
    \phi_{Y_{1}}(s) = s
-
-
-----
-
-

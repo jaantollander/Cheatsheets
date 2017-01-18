@@ -10,5 +10,6 @@ Stochastic Processes
 
    probability/markov_chains/index
    probability/martingales
+   probability/poisson_process
    probability/distributions
    probability/examples
