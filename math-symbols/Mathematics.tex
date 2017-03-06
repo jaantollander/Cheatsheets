@@ -1,0 +1,545 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx, color}
+\usepackage[left=1.5cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+
+% Tables
+\usepackage{float}
+\usepackage{wrapfig, booktabs}
+\usepackage{multirow}
+
+% Multiple pages long table
+\usepackage{longtable}
+%\usepackage{tabulary}
+
+% New colunm type
+\usepackage{array}
+\newcolumntype{C}{>{\ttfamily}l}	% Columntype for LaTeX commands
+\newcolumntype{T}{>{\Large}l}		% Columntype for titles
+\newcolumntype{S}{>{\bfseries}c}	% Columntype for subtitles
+\newcolumntype{G}{>{\Large}l}		% Columntype for Greek Alphabet
+
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.3}
+
+%\renewcommand*{\familydefault}{\rmdefault}
+
+
+
+
+
+\begin{document}
+
+\begin{longtable}{cclC}
+
+
+\midrule \midrule
+\textbf{Symbol} 	& \textbf{Usage} 		& \textbf{Interpretatation} 			& \Large{\LaTeX} \\ \midrule \midrule
+
+\multicolumn{4}{T}{Set Theory} \\ \midrule \midrule
+
+\multicolumn{4}{S}{Definition symbols} \\ \midrule
+\multirow{3}{*}{:} 	& $A : B$ 				& $A$ is defined by $B$ 				& : \\ 
+ 					& $A:=B$ 				& $A$ is defined as equal to $B$ 		& : \\ 
+ 					& $A:\Leftrightarrow B$ & $A$ is defined as equivalent to $B$ 	& : \\ \midrule
+
+\multicolumn{4}{S}{Set Construction} \\ \midrule
+$\emptyset$ 				&  				& \multirow{2}{*}{Empty set} 													& \textbackslash emptyset,  \\ 
+$\varnothing$				&				& 							 													& \textbackslash varnothing \\
+$\{ \ \}$ 					& $\{a,b,...\}$ & set consisting of the elements $a,b$ and so on 								& \textbackslash \{; \textbackslash \} \\ 
+$|$ 						& $\{a|T(a)\}$ 	& \multirow{2}{*}{set consists of elements $a$ that satisfy condition $T(a)$} 	& | \\ 
+: 							& $\{a:T(a)\}$ 	&  																				& : \\ \midrule
+
+\multicolumn{4}{S}{Set Operations} \\ \midrule
+$\cup$			& $A \cup B$		& union of the sets $A$ and $B$ 			 & \textbackslash cup \\ 
+$\cap$			& $A \cap B$		& intersection of the sets $A$ and $B$  	 & \textbackslash cap \\ 
+$\setminus$		& $A \setminus B$	& difference of sets $A$ and $B$ 			 & \textbackslash setminus \\ 
+$\triangle$ 	& $A \triangle B$ 	& symmetric difference of sets $A$ and $B$ 	 & \textbackslash triangle \\ 
+$\times$ 		& $A \times B$ 		& Cartesian product of sets $A$ and $B$ 	 & \textbackslash times \\ 
+$\dot\cup$ 		& $A \dot\cup B$ 	& disjoint union of sets $A$ and $B$ 		 & \textbackslash dot\textbackslash cup \\ 
+$\sqcup$ 		& $A \sqcup B$ 		& disjoint intersection of sets $A$ and $B$  & \textbackslash sqcup \\ 
+$\mathrm{C}$	& $A^{\mathrm{C}}$ 	& \multirow{2}{*}{complement of the set $A$} & \textbackslash mathrm\{C\} \\ 
+$\bar{}$ 		& $\bar{A}$ 		&  											 & \textbackslash bar \\ 
+$\mathcal{P}$	& $\mathcal{P}(A)$ 	& \multirow{2}{*}{power set of the set $A$}  & \textbackslash mathcal\{P\} \\ 
+$\mathfrak{P}$ 	& $\mathfrak{P}(A)$ &  											 & \textbackslash mathfrak\{P\} \\ \midrule
+
+\multicolumn{4}{S}{Set Relations} \\ \midrule
+$\subset$ 	 & $A \subset B$ 	& \multirow{2}{*}{$A$ is proper subset of $B$} 	 & \textbackslash subset \\ 
+$\subsetneq$ & $A \subsetneq B$ &  												 & \textbackslash subsetneq \\ 
+$\subseteq$  &  $A \subseteq B$ & $A$ is a subset of $B$						 & \textbackslash subseteq \\ 
+$\supset$ 	 & $A \supset B$ 	& \multirow{2}{*}{$A$ is proper superset of $B$} & \textbackslash supset \\ 
+$\supsetneq$ & $A \supsetneq B$ & 												 & \textbackslash supsetneq \\ 
+$\supseteq$  & $A \supseteq B$ 	& $A$ is a superset of $B$ 						 & \textbackslash supseteq \\ 
+$\in$ 		 & $a \in A$ 		& \multirow{2}{*}{element a is in the set A} 	 & \textbackslash in \\ 
+$\ni$ 		 & $A \ni a$ 		&  												 & \textbackslash ni \\ 
+$\notin$ 	 & $a \notin A$		& \multirow{2}{*}{element a is not in the set A} & \textbackslash notin \\ 
+$\not\ni$ 	 & $A \not\ni a$ 	&  												 & \textbackslash not\textbackslash ni \\ \midrule
+
+\multicolumn{4}{S}{Number sets} \\ \midrule
+$\mathbb{N}$ &  & natural numbers 	& \textbackslash mathbb\{N\} \\ 
+$\mathbb{Z}$ &  & intgers 			& \textbackslash mathbb\{Z\} \\ 
+$\mathbb{Q}$ &  & rational numbers	& \textbackslash mathbb\{Q\} \\ 
+$\mathbb{A}$ &  & algebraic numbers & \textbackslash mathbb\{A\} \\ 
+$\mathbb{R}$ &  & real numbers 		& \textbackslash mathbb\{R\} \\ 
+$\mathbb{C}$ &  & complex numbers 	& \textbackslash mathbb\{C\} \\ 
+$\mathbb{H}$ &  & quaternions 		& \textbackslash mathbb\{H\} \\ \midrule
+
+
+\multicolumn{4}{S}{Cardinality} \\ \midrule
+$\vert \ \vert$ & $\vert A \vert$ 				& \multirow{2}{*}{cardinality of the set $A$} 	& \textbackslash vert \\ 
+$\#$ 			& $\#A$ 						&  												& \textbackslash \# \\ 
+$\mathfrak{c}$ 	&  								& cardinality of the continuum 					& \textbackslash mathfrak\{c\} \\ 
+$\aleph$ 		& $\aleph_{0},\aleph_{1},...$ 	& infinite cardinals 							& \textbackslash aleph \\ 
+$\beth$ 		& $\beth_{0},\beth_{1},...$ 	& beth numbers 									& \textbackslash beth \\ \midrule \midrule
+
+\multicolumn{4}{T}{Arithmetic} \\ \midrule \midrule
+\multicolumn{4}{S}{Arithmetic operators} \\ \midrule
+$+$					& $a+b$			& $a$ added to $b$ 											& + \\ 
+$-$					& $a-b$			& $a$ substracted from $b$ 									& - \\ 
+$\cdot$				& $a\cdot b$	& \multirow{2}{*}{$a$ multiplied by $b$}					& \textbackslash cdot \\ 
+$\times$			& $a \times b$	&  															& \textbackslash times \\ 
+$:$					& $a:b$ 		& \multirow{4}{*}{$a$ divided by $b$} 						& : \\ 
+$/$					& $a/b$ 		&  															& / \\ 
+$\div$				& $a \div b$ 	&  															& \textbackslash div \\ 
+$\frac{ \ }{ \ }$	& $\frac{a}{b}$ &  															& \textbackslash frac \\ 
+$-$					& $-a$ 			& negative of the number $a$ or the additive ilnverse of $a$ & - \\ 
+$\pm$				& $\pm a$		& plus of minus $a$ 										& \textbackslash pm \\ 
+$\mp$				& $\mp a$		& minus or plus $a$ 										& \textbackslash mp \\ 
+$( \ )$				& $(a)$			& \multirow{2}{*}{term $a$ is evaluated first} 				& (  ) \\ 
+$[ \ ]$				& $[a]$ 		&  															& [  ] \\ \midrule
+
+\multicolumn{4}{S}{Equality signs} \\ \midrule
+$=$ 			& $a = b$ 			& $a$ equals $b$ 								& = \\ 
+$\neq$ 			& $a \neq b$ 		& $a$ does not equal $b$ 						& \textbackslash neq \\ 
+$\equiv$ 		& $a \equiv b$ 		& $a$ is identical to $b$ 						& \textbackslash equiv \\ 
+$\approx$ 		& $a \approx b$ 	& $a$ is approximately equal to $b$ 			& \textbackslash approx \\ 
+$\sim$ 			& $a \sim b$ 		& \multirow{2}{*}{$a$ is proportional to $b$}	& \textbackslash sim \\ 
+$\propto$ 		& $a \propto b$ 	&  												& \textbackslash propto \\ 
+$\widehat{=}$ 	& $a \ \widehat{=} \ b$ & $a$ corresponds to $b$ 					& \textbackslash widehat\{=\} \\ \midrule
+
+\multicolumn{4}{S}{Comparison} \\ \midrule
+$<$ 		& $a<b$ 		& $a$ is less than $b$ 									& < \\
+$>$ 		& $a>b$ 		& $a$ is greater than $b$ 								& > \\
+$\le$ 		& $a \le b$ 	& \multirow{2}{*}{$a$ is less than or equal to $b$} 	& \textbackslash le, \textbackslash leq \\
+$\leqq$ 	& $a \leqq b$	&  														& \textbackslash leqq \\
+$\ge$ 		& $a \ge b$ 	& \multirow{2}{*}{$a$ is greater than or equalt to $b$} & \textbackslash ge, \textbackslash geq \\
+$\geqq$ 	& $a \geqq b$ 	&  														& \textbackslash geqq \\
+$\ll$ 		& $a \ll b$ 	& $a$ is much smaller than $b$ 							& \textbackslash ll \\
+$\gg$ 		& $a \gg b$ 	& $a$ is much bigger than $b$ 							& \textbackslash gg \\ \midrule
+
+\multicolumn{4}{S}{Divisibility} \\ \midrule
+$\mid$ 		& $a \mid b$ 			& $a$ divides $b$ 											& \textbackslash mid \\ 
+$\nmid$ 	& $a \nmid b$ 			& $a$ does not divide $b$ 									& \textbackslash nmid \\ 
+$\perp$ 	& $a \perp b$ 			& $a$ and $b$ are relativitely prime 						& \textbackslash perp \\ 
+$\sqcap$	& $a \sqcap b$ 			& \multirow{2}{*}{greatest common divisor of $a$ and $b$}	& \textbackslash sqcap \\ 
+$\wedge$ 	& $a \wedge b$ 			&  															& \textbackslash wedge \\ 
+$\sqcup$ 	& $a \sqcup b$	 		& \multirow{2}{*}{least common multiple of $a$ and $b$} 	& \textbackslash sqcup \\ 
+$\vee$ 		& $a \vee b$ 			&  															& \textbackslash vee \\ 
+$\equiv$ 	& $a \equiv b \mod m$	& $a$ and $b$ are congruent modulo $m$ 						& \textbackslash equiv \\ \midrule
+
+
+\multicolumn{4}{S}{Elementary Functions} \\ \midrule
+$\vert \ \ \vert$ 					& $\vert x \vert$ 						& absolute value of $x$ 												& \textbackslash vert \\ 
+$[ \ \ ]$ 							& $[x]$ 								& \multirow{3}{*}{biggest whole number less than equal to $x$} 			& [  ] \\ 
+\multirow{2}{*}{$\lfloor \ \rfloor$}& \multirow{2}{*}{$\lfloor x \rfloor$}	&  																		& \textbackslash lfloor \\ 
+									&										&																		& \textbackslash rfloor \\
+\multirow{2}{*}{$\lceil \ \rceil$}	& \multirow{2}{*}{$\lceil x \rceil$} 	& \multirow{2}{*}{smallest whole number greater than or equal to $x$} 	& \textbackslash lceil \\ 
+									&										&																		& \textbackslash rceil \\
+\multirow{2}{*}{$\sqrt{ \ }$} 		& $\sqrt{x}$ 							& square root of $x$ 													& \multirow{2}{*}{\textbackslash sqrt} \\ 
+ 									& $\sqrt[n]{x}$ 						& $n$-th square root 													&  \\ 
+$\%$ 								& $x\%$ 								& x-percent 															& \textbackslash \% \\ \midrule
+
+\multicolumn{4}{S}{Mathematical Constants} \\ \midrule
+$\pi$ 		&  & pi (Archimedes' constant) 		& \textbackslash pi \\ 
+$e$ 		&  & Euler's constant 				& e \\ 
+$\varphi$ 	&  & golden ratio 					& \textbackslash varphi \\ 
+$i$ 		&  & imaginary unit ($\sqrt{-1}$ 	& i \\ \midrule \midrule
+
+\multicolumn{4}{T}{Calculus} \\ \midrule \midrule
+\multicolumn{4}{S}{Intervals} \\ \midrule
+$[ \ ]$ & $[a,b]$ & closed interval between $a$ and $b$ 						&  \\ 
+$] \ [$ & $]a,b[$ & \multirow{2}{*}{open interval between $a$ and $b$} 			&  \\ 
+$( \ )$ & $(a,b)$ &  															&  \\ 
+$[ \ [$ & $[a,b)$ & \multirow{2}{*}{right-open interval between $a$ and $b$} 	& [ ] \\ 
+$[ \ )$ & $[a,b)$ &  															& ( ) \\ 
+$] \ ]$ & $]a,b]$ & \multirow{2}{*}{left-open interval between $a$ and $b$} 	&  \\ 
+$) \ ]$ & $(a,b]$ &  															&  \\ \midrule
+
+\multicolumn{4}{S}{Sequences and series} \\ \midrule
+$\sum$ 		& $\sum_{i=1}^{n}, \sum_{i \in I}$ 			& sum from $i=1$ to $n$ or over all elements $i$ in set $I$ 	& \textbackslash sum \\ 
+$\prod$ 	& $\prod_{i=1}^{n}, \prod_{i \in I}$ 		& product from $i=1$ to $n$ or over all elements $i$ in set $I$ & \textbackslash prod \\ 
+$\coprod$ 	& $\coprod_{i=1}^{n}, \coprod_{i \in I}$ 	& product from $i=1$ to $n$ or over all elements $i$ in set $I$ & \textbackslash coprod \\ 
+$( \ )$ 	& $(a_{n})$ 								& sequence of elements $a_{1},a_{2},...$ 						& ( ) \\ 
+$\to$ 		& $a_{n} \to a$ 							& sequence $(a_{n)}$ tends to limit $a$ 						& \textbackslash to \\ 
+$\infty$ 	& $n \to \infty$ 							& $n$ tends to infinity 										& \textbackslash infty \\ \midrule
+
+\multicolumn{4}{S}{Functions} \\ \midrule
+\multirow{2}{*}{$\to$} 		& $f:A \to B$ 			& \multirow{2}{*}{Function $f$ maps from set $A$ to set $B$} 	& \textbackslash to	\\ 
+ 							& $A \xrightarrow{f} B$ &  																& \textbackslash xrightarrow\{f\} 	\\ 
+\multirow{2}{*}{$\mapsto$} 	& $f:A \mapsto B$  		& \multirow{2}{*}{Function $f$ maps from set $x$ to set $y$} 	& \textbackslash mapsto 	\\ 
+ 							& $A \xmapsto{f} B$  	&  																& \textbackslash xmapsto\{f\} 	\\ 
+\multirow{2}{*}{$( \ )$} 	& $f(x)$ 				& image of element $x$ under function $f$ 						& \multirow{2}{*}{( )} 	\\ 
+ 							& $f(X)$ 				& \multirow{2}{*}{image of set $X$ under fuction $f$}			&  	\\ 
+$[ \ ]$ 					& $f[X]$ 				&  																& [ ] 	\\ 
+$\vert$ 					& $f \vert x$ 			& restriction of function $f$ to set $X$						& \textbackslash vert 	\\ 
+$\cdot$ 					& $f(\cdot)$ 			& placeholder for a variable as argument of function $f$		& \textbackslash cdot 	\\ 
+$-1$ 						& $f^{-1}$ 				& inverse function of $f$ 										& -1 	\\ 
+$\circ$ 					& $f \circ g$ 			& composition of functions $f$ and $g$ 							& \textbackslash circ 	\\ 
+$\ast$ 						& $f \ast g$  			& convolution of functions $f$ and $g$  						& \textbackslash ast 	\\ 
+$\hat{ \ }$ 				& $\hat{f}$ 			& Fourier transformation of function $f$						& \textbackslash hat 	\\ \midrule
+
+
+\multicolumn{4}{S}{Limits} \\ \midrule
+$\uparrow$ 		& $\lim_{x \uparrow a} f(x)$	& \multirow{2}{*}{limit of function $f$ approaches $a$ from below }		& \textbackslash uparrow 	\\ 
+$\nearrow$ 		& $\lim_{x \nearrow a} f(x)$ 	&  																		& \textbackslash nearrow 	\\ 
+$\to$ 			& $\lim_{x \to a} f(x)$ 		& limit of function $f$ approaches $a$ 									& \textbackslash to 	\\ 
+$\searrow$ 		& $\lim_{x \searrow a} f(x)$ 	& \multirow{2}{*}{limit of function $f$ approaches $a$ from above } 	& \textbackslash searrow 	\\ 
+$\downarrow$ 	& $\lim_{x \downarrow a} f(x)$ 	&  																		& \textbackslash downarrow 	\\ \midrule
+
+\multicolumn{4}{S}{Asymptotic Behaviour} \\ \midrule
+$\sim$ 			& $f \sim g$ 				& function $f$ is aymptotically equal to function $g$	& \textbackslash sim 	\\ 
+$o$ 			& $f \in o(g)$ 				& function $f$ grows slower than $g$					& o 	\\ 
+$\mathcal{O}$ 	& $f \in \mathcal{O} (g)$  	& function $f$ grows not subtantially faster than $g$	& \textbackslash mathcal\{O\} 	\\ 
+$\Theta$ 		& $f \in \Theta (g)$  		& function $f$ grows as fast as $g$	 					& \textbackslash Theta 	\\ 
+$\Omega$ 		& $f \in \Omega (g)$ 		& function $f$ grows not substantially slower than $g$	& \textbackslash Omega 	\\  
+$\omega$ 		& $f \in \omega (g)$  		& function $f$ grows faster than $g$	 				& \textbackslash omega 	\\ \midrule
+
+\multicolumn{4}{S}{Differential Calculus} \\ \midrule
+$\prime$ 						& $f^{\prime}, f^{\prime \prime}$ 	& first or second derivative of function $f$ 						& \textbackslash prime 	\\ 
+\multirow{2}{*}{$\cdot$} 		& $\dot{f}$ 						& first or second derivative of function $f$ 						& \textbackslash dot 	\\ 
+ 								& $\ddot{f}$ 						& with respect to time (in physics)  								& \textbackslash ddot  	\\ 
+$( \ )$ 						& $f^{(n)}$ 						& $n$-th derivative of function $f$ 								& ( ) 	\\ 
+\multirow{2}{*}{$\mathrm{d}$}	& $\frac{\mathrm{d}f}{\mathrm{d}x}$ & derivative of function $f$ with respect to variable $x$ 			& \multirow{2}{*}{d} 	\\ 
+ 								& $\mathrm{d}f$ 					& total differential of function $f$ 								&  	\\  
+\multirow{2}{*}{$\partial$} 						& \multirow{2}{*}{$\frac{\partial f}{\partial x}$} 	& partial derivative of function $f$ with respect to 			& \multirow{2}{*}{\textbackslash partial} 	\\
+								&									& variable $x$ 														&						 \\  \midrule
+	
+\multicolumn{4}{S}{Integral Calculus} \\ \midrule
+$\int$ 		& $\int_{a}^{b}$, $\int_{G}$ 	& definite intergral between $a$ and $b$ or over set $G$ 	& \textbackslash int 	\\ 
+$\oint$ 	& $\oint_{\gamma}$ 				& curve integral along curve $\gamma$ 						& \textbackslash oint 	\\ 
+$\iint$ 	& $\iint_{\mathcal{F}}$ 		& survafe integral over surface $\mathcal{F}$ 				& \textbackslash iint 	\\ 
+$\iiint$ 	& $\iiint_{V}$ 					& volume integral over volume $V$ 							& \textbackslash iiint 	\\   \midrule
+
+\multicolumn{4}{S}{Vector Calculus} \\ \midrule
+\multirow{3}{*}{$\nabla$} 	& $\nabla f$ 			& gradient of function $f$ 				& \multirow{3}{*}{\textbackslash nabla} 	\\ 
+ 							& $\nabla \cdot F$ 		& divergent of vector field $F$ 		&  	\\ 
+ 							& $\nabla \times F$ 	& curl of vector field $F$ 				&  	\\ 
+$\Delta$ 					& $\Delta f$ 			& Laplace operator of function $f$ 		& \textbackslash Delta 	\\  
+$\square$ 					& $\square f$ 			& D'Alembert operator of function $f$ 	& \textbackslash square 	\\   \midrule
+
+\multicolumn{4}{S}{Topology} \\ \midrule
+$\partial$ 	& $\partial U$ 			& boundary of set $U$						& \textbackslash partial 	\\ 
+$\circ$ 	& $U^{\circ}$ 			& interior of set $U$ 						& \textbackslash circ 	\\ 
+-- 			& $\bar{U}$ 			& closure of set $U$ 						& \textbackslash bar 	\\  
+$\cdot$ 	& $\dot{U}(x)$ 			& punctured neighbourhood $U$ of point $x$ 	& \textbackslash dot 	\\   \midrule
+
+\multicolumn{4}{S}{Functional Analysis} \\ \midrule
+$\prime$ 			& $V^{\prime}$ 			& topological dual space of topological vector space $V$ 	& \multirow{2}{*}{\textbackslash prime} 	\\ 
+$\prime \prime$ 	& $V^{\prime \prime}$ 	& bidual space of normed vector space $V$ 					&  	\\ 
+$\hat{ \ }$ 		& $\hat{X}$ 			& completion of metric space $X$							& \textbackslash hat 	\\ 
+$\hookrightarrow$ 	& $X \hookrightarrow Y$ & emberding of topological vector space $X$ into $Y$ 		& \textbackslash hookrightarrow 	\\  \midrule \midrule
+
+
+\multicolumn{4}{T}{Linear algebra and Geometry} \\ \midrule
+\midrule
+\multicolumn{4}{S}{Elementary Geometry} \\ \midrule
+$[ \ ]$ 		& $[AB]$ 			& line segment between points $A$ and $B$ 								& [ ] 	\\ 
+$\vert \ \vert$ & $\vert AB \vert$ 	& \multirow{2}{*}{length of line segment between points $A$ and $B$} 	& \textbackslash vert 	\\ 
+-- 				& $\overline{AB}$ 	&  																		& \textbackslash overline 	\\ 
+$\rightarrow$ 	& $\vec{AB}$ 		& vector between points $A$ and $B$ 									& \textbackslash vec 	\\ 
+$\angle$ 		& $\angle ABC$ 		& angle between line $BA$ and $BC$ 										& \textbackslash angle 	\\ 
+$\triangle$ 	& $\triangle ABC$ 	& triangle with verticles $A$, $B$ and $C$ 								& \textbackslash triangle 	\\ 
+$\square$ 		& $\square ABCD$ 	& quadrilateral with verticles $A$, $B$, $C$ and $D$ 					& \textbackslash square 	\\ 
+$\parallel$ 	& $g \parallel h$ 	& line $g$ and $h$ are parallel 										& \textbackslash parallel 	\\ 
+$\nparallel$ 	& $g \nparallel h$ 	& line $g$ and $h$ are not parallel 									& \textbackslash nparallel  	\\ 
+$\perp$ 		& $g \perp h$ 		& lines $g$ and $h$ are orhogonal 										& \textbackslash perp 	\\  \midrule
+
+\multicolumn{4}{S}{Complex Numbers} \\ \midrule
+$\Re$ 			& $\Re (z)$ 			& real part of complex number $z$ 			& \textbackslash Re 	\\ 
+$\Im$ 			& $\Im (z)$ 			& imaginary part of complex number $z$ 		& \textbackslash Im 	\\ 
+- 				& $\bar{z}$ 			& \multirow{2}{*}{complex conjugate of $z$}	& \textbackslash bar 	\\ 
+$\ast$ 			& $z^{\ast}$ 			&  											& \textbackslash ast 	\\ 
+$\vert \ \vert$ & $\vert z \vert$ 		& absolute value of complex number $z$ 		& \textbackslash vert 	\\  \midrule
+
+\multicolumn{4}{S}{Vector and Matrices} \\ \midrule
+\multicolumn{2}{c}{$\begin{pmatrix}
+v_{1} & ... & v_{n}
+\end{pmatrix}$ }				& row vector comprising elements $v_{1}$ trough $v_{n}$ 		& 	 	\\ 
+
+\multicolumn{2}{c}{$\begin{pmatrix}
+v_{1} \\
+.\\
+.\\
+v_{m}
+\end{pmatrix}$}		 			& column vector comprising elements $v_{1}$ trough $v_{m}$ 			&  	\\ 
+
+\multicolumn{2}{c}{$\begin{pmatrix}
+a_{11} 	& ... 	& a_{1n}\\
+.		& .		& .		\\
+.		& \ \ .	& .		\\
+a_{m1}	& ...	& a_{mn}		
+\end{pmatrix}$} 			  			& matrix comprising elements $a_{11}$ trough $a_{mn}$ 			&  	\\  \midrule
+
+\multicolumn{4}{S}{Vector Calculus} \\ \midrule
+$\cdot$ 									& $v \cdot W$ 					& \multirow{4}{*}{dot product of vectors $v$ and $w$} 			& \textbackslash cdot 	\\ 
+$( \ )$ 									& $(v,w)$ 						&  																& ( ) 	\\ 
+\multirow{2}{*}{$\langle \ \rangle$} 		& $\langle v,w \rangle$ 		&  																& \textbackslash langle 	\\ 
+ 											& $\langle v \vert w \rangle$ 	&  																& \textbackslash rangle 	\\ 
+$\times$ 									& $v \times w$ 					& \multirow{2}{*}{cross product of vectors $u$, $v$ and $w$} 	& \textbackslash times 	\\  
+$[ \ ]$ 									& $[v,w]$ 						&  																& [ ] 	\\  
+$( \ )$ 									& $(u,v,w)$ 					& triple product of vectors $u$, $v$ and $w$ 					& ( ) 	\\   
+$\otimes$ 									& $v \otimes w$ 				& dyanic product of vectors $v$ and $w$ 						& \textbackslash otimes 	\\  
+$\wedge$ 									& $v \wedge w$ 					& wedge product of vectors $v$ and $w$ 							& \textbackslash wedge 	\\  
+$\vert \ \vert$ 							& $\vert v \vert$ 				& length of vector $v$ 											& \textbackslash vert 	\\  
+$\Vert \ \Vert$ 							& $\Vert v \Vert$ 				& norm of vector $v$ 											& \textbackslash Vert, \textbackslash | 	\\  
+$\hat{ \ }$ 								& $\hat{v}$ 					& normalized vector of vector $v$ 								& \textbackslash hat 	\\  \midrule
+
+
+\multicolumn{4}{S}{Matrix Calculus} \\ \midrule
+$\cdot$ 		& $A \cdot B$ 		& product of matrices $A$ and $B$ 						& \textbackslash cdto 	\\ 
+$\circ$ 		& $A \circ B$ 		& Hamard product of matrices $A$ and $B$ 				& \textbackslash circ 	\\ 
+$\otimes$ 		& $A \otimes B$ 	& Kronecker product of matrices $A$ and $B$ 			& \textbackslash otimes 	\\ 
+$T$ 			& $A^{T}$ 			& transposed matrix of matrix $A$ 						& T 	\\ 
+$H$ 			& $A^{H}$ 			& \multirow{3}{*}{conjugate transpose of matrix $A$} 	& H 	\\  
+$\ast$ 			& $A^{\ast}$ 		&  														& \textbackslash ast 	\\ 
+$\dagger$ 		& $A^{\dagger}$ 	&  														& \textbackslash dagger 	\\ 
+$-1$ 			& $a^{-1}$ 			& inverse matrix of matrix $A$ 							& -1 	\\ 
+$+$ 			& $A^{+}$ 			& Moore-Penrose pseudoinverse of matrix $A$ 			& + 	\\ 
+$\vert \ \vert$ & $\vert A \vert$ 	& determinan of matrix $A$ 								& \textbackslash vert 	\\  
+$\Vert \ \Vert$ & $\Vert A \Vert$ 	& norm of matrix $A$ 									& \textbackslash Vert, \textbackslash | 	\\  \midrule
+
+\multicolumn{4}{S}{Vector Spaces} \\ \midrule
+$+$ 									& $V + W$ 								& sum of vector spaces $V$ and $W$ 							& + 	\\ 
+$\oplus$ 								& $V \otimes W$ 						& direct sum of vector spaces $V$ and $W$ 					& \textbackslash oplus 	\\ 
+$\times$ 								& $V \times W$  						& direct product of vector spaces $V$ and $W$  				& \textbackslash times 	\\ 
+$\otimes$ 								& $V \otimes W$ 						& tensor product of vector spaces $V$ and $W$  	 			& \textbackslash otimes 	\\ 
+$/$ 									& $V / U$ 								& quotient space of vector space $V$ by subspace $U$		& / 	\\ 
+$\perp$ 								& $U^{\perp}$ 							& orthogonal complement of subspace $U$ 					& \textbackslash perp 	\\ 
+$\ast$ 									& $V^{\ast}$ 							& dual space of vector space $V$ 							& \textbackslash ast 	\\ 
+$0$ 									& $X^{0}$ 								& annihilator space of the set of vectors $X$ 				& 0 	\\ 
+\multirow{2}{*}{$\langle \ \rangle$}	& \multirow{2}{*}{$\langle X \rangle$} 	& \multirow{2}{*}{linear hull of the set of vectors $X$} 	& \textbackslash langle 	\\  
+ 										&  										&  															& \textbackslash rangle 	\\  \midrule \midrule
+ 										
+
+\multicolumn{4}{T}{Algebra} \\ \midrule \midrule
+\multicolumn{4}{S}{Relations} \\ \midrule
+\multirow{2}{*}{$\circ$}  & $R \circ S$ & composition of relations $R$ and $S$ 					& \multirow{2}{*}{\textbackslash circ} 	\\ 
+ 				& $a \circ b$ 			& \multirow{3}{*}{operation of elements $a$ and $b$} 	&  	\\ 
+$\bullet$ 		& $a \bullet b$ 		&  														& \textbackslash bullet 	\\ 
+$\ast$ 			& $a \ast b$ 			&  														& \textbackslash ast 	\\ 
+$\leq$ 			& $a \leq b$ 			& order relation between elements $a$ and $b$ 			& \textbackslash leq 	\\  
+$\prec$ 		& $a \prec b$ 			& element $a$ is predecessor of element $b$ 			& \textbackslash prec 	\\ 
+$\succ$ 		& $a \succ b$ 			& element $a$ is successor of element $b$  				& \textbackslash succ 	\\ 
+$\sim$ 			& $a \sim b$ 			& equivalence relation between elements $a$ and $b$ 	& \textbackslash sim 	\\ 
+$[ \ ]$ 		& $[a]$ 				& equivalence class of element $a$ 						& [ ] 	\\ 
+$-1$ 			& $R^{-1}$ 				& inverse relation of relation $R$ 						& -1 	\\  
+$+$ 			& $R^{+}$ 				& transitive closure of relation $R$ 					& + 	\\ 
+$\ast$ 			& $R^{\ast}$ 			& reflexive closure of relation $R$ 					& \textbackslash ast 	\\ \midrule
+
+\multicolumn{4}{S}{Group Theory} \\ \midrule
+$\simeq$ 								& $G \simeq H$ 							& \multirow{2}{*}{groups $G$ and $H$ are isomorphic} 	& \textbackslash simeq 	\\ 
+$\cong$ 								& $G \cong H$ 							&  														& \textbackslash cong 	\\ 
+$\times$ 								& $G \times H$ 							& direct product of groups $G$ and $H$ 					& \textbackslash times 	\\ 
+$\rtimes$ 								& $G \rtimes H$  						& semidirect product of groups $G$ and $H$ 				& \textbackslash rtimes 	\\ 
+$\wr$ 									& $G \wr H$  							& wreath product of groups $G$ and $H$  				& \textbackslash wr 	\\  
+$\leq$ 									& $U \leq G$ 							& $U$ is a subgroup of group $G$ 						& \textbackslash leq 	\\ 
+$<$ 									& $U < G$ 								& $U$ is a proper subgroup of group $G$  				& < 	\\ 
+$\vartriangleleft$ 						& $N \vartriangleleft G$ 				& $U$ is a normal subgroup of group $G$					& \textbackslash vartriangleleft	\\ 
+$/$ 									& $G/N$ 								& quotient group of group $G$ by normal subgroup $N$ 	& / 	\\ 
+$:$ 									& $(G:N)$ 								& index of subgroup $U$ in group $G$					& : 	\\  
+\multirow{2}{*}{$\langle \ \rangle$} 	& \multirow{2}{*}{$\langle E \rangle$} 	& \multirow{2}{*}{subgroup generated by set $E$}		& \textbackslash langle 	\\ 
+ 										&  										&							  							& \textbackslash rangle 	\\
+$[ \ ]$ 								& $[g,h]$ 								& commutator of elements $g$ and $h$ 					& [ ] 	\\ \midrule
+
+\multicolumn{4}{S}{Field Theory} \\ \midrule
+$/$ 				& $L/K$ 		& \multirow{3}{*}{extension of field $L$ over field $K$} 	& / 	\\ 
+$\mid$ 				& $L \mid K$ 	&  															& \textbackslash mid 	\\ 
+\multirow{2}{*}{:} 	& $L:K$ 		&  															& \multirow{2}{*}{:} 	\\ 
+ 					& $[L:K]$ 		& degree of field extension $L$ over $K$ 					&  	\\ 
+-- 					& $\bar{K}$ 	& algebraic closure of field $K$ 							& \textbackslash bar 	\\  
+$\mathbb{K}$ 		&  				& field of real or complex numbers 							& \textbackslash mathbb\{K\} 	\\ 
+$\mathbb{F}$ 		&  				& finite field 												& \textbackslash mathbb\{F\} 	\\ \midrule
+
+\multicolumn{4}{S}{Ring Theory} \\ \midrule
+$\ast$ 				& $R^{\ast}$ 				& \multirow{2}{*}{group of units of ring $R$} 		& \textbackslash ast 	\\ 
+$\times$ 			& $R^{\times}$ 				&  													& \textbackslash times 	\\ 
+$\vartriangleleft$ 	& $I \vartriangleleft R$ 	& $I$ is an ideal of ring $R$						& \textbackslash vartriangleleft 	\\ 
+$/$ 				& $R/I$ 					& quotient ring of ring $R$ by ideal $I$ 			& / 	\\ 
+$[ \ ]$ 			& $R[X]$ 					& polynomial ring over ring $R$ with variable $X$ 	& [ ] 	\\ \midrule \midrule
+
+\multicolumn{4}{T}{Combinatorics} \\ \midrule \midrule
+\multicolumn{4}{S}{Combinatorics} \\ \midrule
+\multirow{3}{*}{$!$} 						& $n!$ 							& number of permutations of $N$ elements 							& \multirow{3}{*}{!} 	\\ 
+ 											& $!n$ 							& number of derangements of $n$ elements 							&  	\\ 
+ 											& $n!!$ 						& number of involutions without fixed points ($n$ odd) 				&  	\\ 
+\multirow{4}{*}{$\binom{ \ }{ \ }$} 		& $\binom{n}{k}$ 				& number of $k$-combinations of $n$ elements 	& \multirow{6}{*}{\textbackslash binom} 	\\ 
+											&								& without repetition																	& \\
+ 											& \multirow{2}{*}{$\binom{n}{k_{1},...,k_{r}}$} 	& number of permutations of $n$ elements of which 					&  	\\  
+ 											&								& $k_{1},...,k_{r}$ are identical									& \\
+$\left(\binom{ \ }{ \ }\right)$ 			& $\left(\binom{n}{k}\right)$ 	& number of $k$-combinations of $n$ elements		&  	\\ 
+											&								& with repetition																	& \\
+\multirow{2}{*}{--} 						& $n^{\overline{m}}$ 			& rising factorial from $n$ with $m$ factors 						& \textbackslash overline 	\\ 
+ 											& $n^{\underline{m}}$ 			& falling factorial from $n$ with $m$ factors 						& \textbackslash underline 	\\ 
+$\#$ 										& $n\#$ 						& product of all primes up to $n$ 									& \textbackslash \# 	\\ \midrule \midrule
+
+\multicolumn{4}{T}{Stochastics} \\ \midrule \midrule
+\multicolumn{4}{S}{Probability Theory} \\ \midrule
+$P$ 						& $P(A)$ 			& probability of event $A$ 									& P 	\\ 
+$\mid$ 						& $P(A \mid B)$ 	& probability of event $A$ given event $B$ 					& \textbackslash mid 	\\ 
+$E$ 						& $E(X)$ 			& expected value of the random variable $X$ 				& E 	\\ 
+$V$ 						& $V(X)$ 			& variance of the random variable $X$ 						& V 	\\ 
+\multirow{2}{*}{$\sigma$} 	& $\sigma (X)$ 		& standard deviation of the random variable $X$ 			& \multirow{2}{*}{\textbackslash sigma} 	\\  
+ 							& $\sigma (X,Y)$ 	& covariance of random variables $X$ and $Y$ 				&  	\\ 
+$\rho$ 						& $\rho (X,Y)$ 		& correlation of random variables $X$ and $Y$ 				& \textbackslash rho 	\\ 
+$\sim$ 						& $X \sim F$ 		& random variable $X$ has distribution $F$ 					& \textbackslash sim 	\\ 
+$\approx$ 					& $X \approx F$ 	& random variable $X$ has distribution $F$ approximately 	& \textbackslash approx 	\\ \midrule
+
+\multicolumn{4}{S}{Statistics} \\ \midrule
+-- 										& $\bar{x}$ 							& average of the values $x_{1},...,x_{n}$ 								& \textbackslash bar 	\\ 
+\multirow{2}{*}{$\langle \ \rangle$} 	& \multirow{2}{*}{$\langle X \rangle$} 	& \multirow{2}{*}{average over all values in the set $X$ (in physics)} 	&  \textbackslash langle	\\ 
+ 										&  										&  																		& \textbackslash rangle 	\\ 
+$\hat{ \ }$ 							& $\hat{p}$ 							& estimator for parameter $p$ 											& \textbackslash hat 	\\ \midrule \midrule
+
+
+
+
+\multicolumn{4}{T}{Logic} \\ \midrule \midrule
+\multicolumn{4}{S}{Operators} \\ \midrule
+$\land$ 			& $A \land B$ 			& proposition $A$ and proposition $B$ 												& \textbackslash land 	\\ 
+$\lor$ 				& $A \lor B$ 			& proposition $A$ or proposition $B$ (or both) 										& \textbackslash lor 	\\ 
+$\Leftrightarrow$ 	& $A \Leftrightarrow B$ & \multirow{2}{*}{proposition $A$ follows from proposition $B$ and vice versa} 		& \textbackslash Leftrightarrow 	\\ 
+$\leftrightarrow$ 	& $A \leftrightarrow B$ &  																					& \textbackslash leftrightarrow 	\\ 
+$\Rightarrow$ 		& $A \Rightarrow B$ 	& from proposition $A$ follows proposition $B$ 										& \textbackslash Rightarrow 	\\  
+$\rightarrow$ 		& $A \rightarrow B$ 	&  																					& \textbackslash rigtharrow 	\\ 
+$\oplus$ 			& $A \oplus B$ 			& \multirow{3}{*}{either proposition $A$ of proposition $B$} 						& \textbackslash oplus 	\\  
+$\veebar$ 			& $A \veebar B$ 		&  																					& \textbackslash veebar 	\\ 
+$\dot{\lor}$ 		& $A \bar{\lor} B$ 		&  																					& \textbackslash dot\{\textbackslash lor\} 	\\ 
+$\lnot$ 			& $\lnot A$ 			& \multirow{2}{*}{not proposition $A$} 												& \textbackslash lnot 	\\ 
+-- 					& $\bar{A}$ 			&  																					& \textbackslash bar 	\\ \midrule
+
+\multicolumn{4}{S}{Quantifiers} \\ \midrule
+$\forall$ 		& $\forall x$ 					& \multirow{2}{*}{for all elements $x$} 			& \textbackslash forall 	\\ 
+$\bigwedge$ 	& $\overset{\bigwedge}{x}$ 		&  													& \textbackslash bigwedge 	\\ 
+$\exists$ 		& $\exists x$ 					& \multirow{2}{*}{at least one element $x$ exists} 	& \textbackslash exists 	\\ 
+$\bigvee$ 		& $\overset{\bigvee}{x}$ 		&  													& \textbackslash bigvee 	\\ 
+$\exists !$ 	& $\exists ! x$ 				& \multirow{2}{*}{exactly one element $x$ exists} 	& \textbackslash exists 	\\  
+$\dot{\bigvee}$ & $\overset{\dot{\bigvee}}{x}$ 	&  													& \textbackslash dot \textbackslash bigvee 	\\ 
+$\nexists$ 		& $\nexists x$ 					& no element $x$ exists 							& \textbackslash nexists 	\\ \midrule
+
+\multicolumn{4}{S}{Deduction symbols} \\ \midrule
+$\vdash$ 					& $A \vdash B$ 		& proposition $B$ can ve syntactically derived  & \textbackslash vdash 	\\  
+							&					& from proposition $A$							& \\
+\multirow{2}{*}{$\models$} 	& $A \models B$ 	& proposition $B$ follows sematically from proposition $A$ 			& \multirow{2}{*}{\textbackslash models} 	\\ 
+ 							& $\models A$ 		& proposition $A$ is universally true 								&  	\\  
+$\top$ 						& $A \top$ 			&  																	& \textbackslash top 	\\
+$\bot$ 						& $A \bot$ 			& proposition $A$ is contradictory 									& \textbackslash bot 	\\  
+$\therefore$ 				& $A \therefore B$ 	& proposition $A$ is true, therefore proposition $B$ is true 		& \textbackslash therefore 	\\ 
+$\because$ 					& $A \because B$ 	& proposition $A$ is true, because $B$ is true 						& \textbackslash because 	\\ 
+$\blacksquare$ 				&  					& \multirow{2}{*}{end of proof }									& \textbackslash blacksquare 	\\ 
+$\Box$ 						&  					&  																	& \textbackslash box 	\\ \midrule
+\multicolumn{4}{S}{} \\ \midrule
+
+\end{longtable}
+
+\newpage
+
+\section{Numeral Systems}
+
+\begin{table}[H]
+\begin{tabular}{ll} \midrule
+\multicolumn{2}{l}{\textbf{Positional notation} ($b$ is the base)}\\ \midrule
+Enumerated digits 	& $a_{n} a_{n-1}...a_{1} a_{0}$ \\ 
+Number 				& $a_{n} b^{n} + a_{n-1} b^{n-1} + ... + a_{0} b^{0}$ \\ \midrule
+
+\multicolumn{2}{l}{\textbf{Base Notation}}\\ \midrule
+Binary		& $10_{2}$ / $10_{\text{bin}}$ \\
+Ternary		& $10_{3}$ \\
+Quaternary	& $10_{4}$ \\
+Quinary		& $10_{5}$ \\
+Senary		& $10_{6}$ \\
+Septenary	& $10_{7}$ \\ 
+Octal		& $10_{8} $ / $ 10_{oct}$ \\
+Nonary		& $10_{9}$ \\
+Decimal 	& $10_{10}$ / $10_{\text{dec}}$ \\
+Hexadecimal & $10_{16}$ / $10_{\text{hex}}$\\
+n:th base 	& $10_{n}$ \\ \midrule
+\multicolumn{2}{l}{\textbf{Conversion Examples}}\\ \midrule
+
+\multicolumn{2}{l}{$1011_{2} \rightarrow 1 \cdot 2^{3} + 0 \cdot 2^{2} + 1 \cdot 2^{1} + 1 \cdot 2^{0} = 11_{10}$}\\
+\multicolumn{2}{l}{$\text{F}4\text{C}_{16} \rightarrow 15 \cdot 16^{2} + 4 \cdot 16^{1} + 12 \cdot 16^{0} = 3916_{10}$} \\ \midrule
+
+\end{tabular} 
+\quad
+\begin{tabular}{|llr|r} \midrule
+Base 16 	& Base 10 & Base 2 \\ \midrule
+Hexadecimal & Decimal & Binary & $2^{n}$\\ \midrule \midrule 
+0 	& 0 	& 0 	\\ 
+1 	& 1 	& 1 & $2^{0}$	\\ 
+2 	& 2 	& 10 & $2^{1}$	\\ 
+3 	& 3 	& 11 	\\ 
+4 	& 4 	& 100 & $2^{2}$	\\ 
+5 	& 5 	& 101 	\\ 
+6 	& 6 	& 110 	\\ 
+7 	& 7 	& 111 	\\ 
+8 	& 8 	& 1000	& $2^{3}$\\ 
+9 	& 9 	& 1001 	\\ 
+A 	& 10 	& 1010 	\\ 
+B 	& 11 	& 1011 	\\ 
+C 	& 12 	& 1100 	\\ 
+D 	& 13 	& 1101 	\\ 
+E 	& 14 	& 1110 	\\ 
+F 	& 15 	& 1111 	\\ 
+10 	& 16 	& 10000 &$2^{4}$\\ \midrule
+\end{tabular} 
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{ccc}
+\multicolumn{3}{l}{\textbf{General Conversion}} \\ \midrule
+$[a_{n} a_{n-1}...a_{0}]_{b}$ & $\Longrightarrow$ & $[a_{n} b^{n} + a_{n-1} b^{n-1} + ... + a_{0} b^{0}]_{b}$ \\ 
+\multicolumn{3}{l}{} \\
+$[a_{n}]_{b} \to [\alpha_{n}]_{\beta}$ and [$b^{n}]_{b} \to [\beta^{n}]_{\beta}$ & $\Longrightarrow$ & $\alpha_{n} \beta^{n} + \alpha_{n-1} \beta^{n-1} + ... + \alpha_{0} \beta^{0}$ \\ \midrule
+\end{tabular} 
+\end{table}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

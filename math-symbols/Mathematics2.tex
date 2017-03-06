@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx, color}
+\usepackage[left=1.5cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+
+% Tables
+\usepackage{float}
+\usepackage{wrapfig, booktabs}
+\usepackage{multirow}
+
+% Multiple pages long table
+\usepackage{longtable}
+%\usepackage{tabulary}
+
+% New colunm type
+\usepackage{array}
+\newcolumntype{C}{>{\ttfamily}l}	% Columntype for LaTeX commands
+\newcolumntype{T}{>{\Large}l}		% Columntype for titles
+\newcolumntype{S}{>{\bfseries}c}	% Columntype for subtitles
+\newcolumntype{G}{>{\Large}l}		% Columntype for Greek Alphabet
+
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.3}
+
+%\renewcommand*{\familydefault}{\rmdefault}
+
+\begin{document}
+
+
+\begin{table}[H]
+\begin{tabular}{lll}
+\multicolumn{3}{l}{\textbf{Roman Numerals}} \\ \midrule
+1 	& I 	& unus, una, unum 	\\ 
+2 	& II	& duo, duae, duo  	\\ 
+3 	& III	& tres, tria 		\\ 
+4 	& IV 	& quattour			\\ 
+5 	& V 	& quinque 			\\ 
+6 	& VI 	& sex 				\\ 
+7 	& VII 	& septem 		 	\\ 
+8 	& VIII 	& octo 				\\ 
+9 	& IX 	& novem 			\\ 
+10 	& X 	& decem 			\\  \midrule
+11 	& XI 	& undecim 			\\ 
+12 	& XII 	& duodecim 			\\ 
+13 	& XIII 	& tredecim 			\\ 
+14 	& XIV 	& quattourdecim 	\\ 
+15 	& XV 	& quindecim 		\\  
+16 	& XVI 	& sedecim 			\\ 
+17 	& XVII 	& septendecim, 		\\ 
+18 	& XVIII & duodeviginti 		\\ 
+19 	& XIX 	& undeviginti 		\\ 
+20 	& XX 	& viginti 			\\  \midrule
+\end{tabular} 
+\quad
+\begin{tabular}{lll}
+\multicolumn{3}{c}{} \\ \midrule
+21	& XI 	& unus et viginti	\\ 
+22	& XII 	& duo et viginti 	\\ 
+30	& XIII 	& triginta			\\ 
+40	& XXIV 	& quandraginta 		\\
+50	& L 	& quinquaginta 		\\ 
+60	& LX 	& sexaginta			\\ 
+70	& LXX 	& septuaginta		\\  
+80	& LXXX 	& octoaginta		\\
+90	& XC 	& nonaginta			\\ 
+100	& C 	& centum 			\\ \midrule
+150	& CL	& centum quadraginta\\ 
+200	& LL 	& ducenti 			\\ 
+300	& LLL 	& trecenti			\\ 
+400	& CD 	& quadringenti 		\\
+500	& D 	& quingenti 		\\ 
+600	& DC 	& sescenti			\\ 
+700	& DCC 	& septimgenti		\\  
+800	& DCCC 	& octingenti		\\
+900& CM 	& nongenti			\\ 
+1000& M 	& mille 			\\ \midrule
+\end{tabular} 
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{GC}
+\multicolumn{2}{c}{\textbf{Greek Alphabet}} \\ \midrule
+$A \ \alpha$ 					& Alpha \\ 
+$B \ \beta$ 					& Beta \\ 
+$\Gamma \ \gamma$				& Gamma \\ 
+$\Delta \ \delta$ 				& Delta \\ 
+$E \ \epsilon \ \varepsilon $ 	& Epsilon \\ \midrule
+$\digamma$ 						& Digamma \\ 
+$Z \ \zeta $ 					& Zeta \\ 
+$H \ \eta$ 						& Eta \\ 
+$\Theta \ \theta \ \vartheta$	& Theta \\ 
+$I \ \iota$ 					& Iota \\ \midrule
+$K \ \kappa \ \varkappa$ 		& Kappa \\ 
+$\Lambda \ \lambda$ 			& Lambda \\ 
+$M \ \mu$ 						& Mu \\ 
+$N \ \nu$ 						& Nu \\ 
+$\Xi \ \xi$ 					& Xi \\ \midrule
+$O \ o$ 						& Omicron \\ 
+$\Pi \ \pi \ \varpi$ 			& Pi \\ 
+$P \ \rho \ \varrho$ 			& Rho \\ 
+$\Sigma \ \sigma \ \varsigma$ 	& Sigma \\ 
+$T \ \tau$ 						& Tau \\ \midrule
+$\Upsilon \ \upsilon$ 			& Upsilon \\ 
+$\Phi \ \phi \ \varphi$			& Phi \\ 
+$X \ \chi$ 						& Chi \\ 
+$\Psi \ \psi$ 					& Psi \\ 
+$\Omega \ \omega$				& Omega \\ \midrule
+\end{tabular} 
+\end{table}
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Mathematics
+\usepackage{amsmath, amsfonts, amssymb, mathtools}
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+
+% Layout & Graphics
+\usepackage{graphicx, color, epstopdf}
+\usepackage{caption, subcaption}
+\usepackage{floatrow, wrapfig, booktabs}
+\usepackage{multicol, microtype, listings}
+
+
+\begin{document}
+\begin{multicols*}{2}
+\flushleft
+\section*{Cartesian}
+\begin{align*}
+\boldsymbol{\hat{\imath}} = (1, 0, 0)
+\\
+\boldsymbol{\hat{\jmath}} = (0, 1, 0)
+\\
+\boldsymbol{\hat{k}} = (0, 0, 1)
+\end{align*}
+
+%\section*{Polar}
+
+
+
+\section*{Cylidrical}
+Cylindrical $\to$ Cartesian
+\begin{align*}
+\begin{cases}
+x = \rho \cos \varphi \\
+y = \rho \sin \varphi \\
+z = z
+\end{cases} \\
+\rho = \sqrt{x^{2}+y^{2}}
+\end{align*}
+
+Volume element
+\begin{align*}
+\mathrm{d}V = \rho\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}z
+\end{align*}
+
+Spherical $\to$ Cylindrical
+\begin{align*}
+\begin{cases}
+\rho = r \sin \theta\, \\
+\varphi = \varphi\, \\
+z = r \cos \theta\, 
+\end{cases}
+\end{align*}
+
+
+
+\section*{Spherical}
+Spherical $\to$ Cartesian
+\begin{align*}
+\begin{cases}
+x=r \, \sin\theta \, \cos\varphi \\
+y=r \, \sin\theta \, \sin\varphi \\
+z=r \, \cos\theta
+\end{cases} \\
+r^2 = x^2+y^2+z^2
+\end{align*}
+
+Volume element
+\begin{align*}
+\mathrm{d}V=r^2 \sin \theta \,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\varphi \\
+\int_{\varphi=0}^{2 \pi} \int_{\theta=0}^{\pi} \int_{r=0}^{\infty} f(r,\theta,\varphi) r^2 \sin \theta \,\mathrm{d}r\ \mathrm{d}\theta\ \mathrm{d}\varphi.
+\end{align*}
+
+Spherical unit coordinates
+\begin{align*}
+\boldsymbol{\hat r}&=\sin (\theta) \cos (\varphi) \boldsymbol{\hat{\imath}} +\sin (\theta) \sin (\varphi) \boldsymbol{\hat{\jmath}} +\cos (\theta) \boldsymbol{\hat{k}}
+\\
+ \boldsymbol{\hat\theta }&=\cos (\theta) \cos (\varphi) \boldsymbol{\hat{\imath}} +\cos (\theta) \sin (\varphi) \boldsymbol{\hat{\jmath}}-\sin (\theta) \boldsymbol{\hat{k}}
+\\
+\boldsymbol{\hat \varphi}&=-\sin (\varphi) \boldsymbol{\hat{\imath}} + \cos (\varphi) \boldsymbol{\hat{\jmath}}
+\end{align*}
+
+
+\end{multicols*}
+
+\end{document}

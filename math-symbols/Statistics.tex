@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Mathematics
+\usepackage{amsmath, amsfonts, amssymb, mathtools}
+
+% Layout & Graphics
+\usepackage{graphicx, color, epstopdf}
+\usepackage{caption, subcaption}
+\usepackage{floatrow, wrapfig, booktabs}
+\usepackage{multicol, microtype, listings}
+
+\begin{document}
+
+
+\section*{Expected value}
+
+Discrete
+\begin{equation}
+    \operatorname{E}[X] = \mu = \sum_{i=1}^n p_i\cdot x_i  = x_1p_1 + x_2p_2 + \dotsb + x_n p_n
+\end{equation}
+
+Continuous
+\begin{equation}
+    \operatorname{E}[X] = \int_{-\infty}^\infty x f(x)\, \mathrm{d}x
+\end{equation}
+
+Properties
+\begin{equation}
+\operatorname{E}[a X + b Y + c] = a \operatorname{E}[X] + b \operatorname{E}[Y] + c\,
+\end{equation}
+
+Arithmetic mean
+\begin{equation}
+ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i = \frac{x_1+x_2+\cdots +x_n}{n} 
+\end{equation}
+
+
+\section*{Variance}
+
+Discrete
+\begin{align}
+\operatorname{Var}(X) = \sum_{i=1}^n p_i\cdot(x_i - \mu)^2 = \sum_{i=1}^n (p_i\cdot x_i^2) - \mu^2, \qquad \mu = \sum_{i=1}^n p_i\cdot x_i 
+\end{align}
+
+Continuous
+\begin{align}
+\operatorname{Var}(X) =\int (x-\mu)^2 \, f(x) \, dx\, =\int x^2 \, f(x) \, dx\, - \mu^2, \qquad \mu = \int x \, f(x) \, dx\, 
+\end{align}
+
+Properties
+\begin{align}
+\sigma^2 = \operatorname{Var}(X) &= \operatorname{E}\left[(X - \operatorname{E}[X])^2\right] = \operatorname{E}\left[X^2 \right] - (\operatorname{E}[X])^2
+\end{align}
+
+Sample
+\begin{equation}
+s^{2}_{x} = \frac{1}{n-1} \sum \left (x_{i}-\hat{x} \right )^{2}
+\end{equation}
+
+Standard deviation
+\begin{align}
+\sigma & = \sqrt{\operatorname{Var}(X)} = \sqrt{\operatorname E[(X - \operatorname{E}[X])^2]} =\sqrt{\operatorname E[X^2]-(\operatorname E[X])^2}
+\end{align}
+
+
+
+\section*{Covariance}
+\begin{align}
+\mathrm{cov}(X,Y)
+&= \operatorname{E}\left[\left(X - \operatorname{E}\left[X\right]\right) \left(Y - \operatorname{E}\left[Y\right]\right)\right] = \operatorname{E}\left[X Y\right] - \operatorname{E}\left[X\right] \operatorname{E}\left[Y\right].
+\end{align}
+
+
+
+\section*{Pearson correlation coefficient}
+\begin{equation}
+ \rho_{X,Y}={\mathrm{cov}(X,Y) \over \sigma_X \sigma_Y} ={\operatorname{E}\left[\left(X - \operatorname{E}\left[X\right]\right) \left(Y - \operatorname{E}\left[Y\right]\right)\right] \over \sqrt{\operatorname{Var}(X)} \sqrt{\operatorname{Var}(Y)}}
+\end{equation}
+
+\newpage
+
+\section*{Regression Analysis}
+
+General regression model
+\begin{align*}
+Y &\approx f (\mathbf {X}, \boldsymbol{\beta} ) \\
+Y &= f (\mathbf {X}, \boldsymbol{\beta} ) + \boldsymbol{\epsilon} \\
+y_{i} &= f(x_{i},\beta)+\epsilon_{i},\quad f(x_{i},\beta) = \hat{y}
+\end{align*}
+
+$\mathbf {X} = 
+\begin{bmatrix}
+x_{1},x_{2}, \dotsc ,x_{n}
+\end{bmatrix},
+\boldsymbol{\beta} = 
+\begin{bmatrix}
+\beta_{0},\beta_{1}, \dotsc ,\beta_{k}
+\end{bmatrix}
+\boldsymbol{\epsilon} = 
+\begin{bmatrix}
+\epsilon_{1}, \epsilon_{2}, \dotsc ,\epsilon_{n}
+\end{bmatrix}
+$ \\
+
+Sum of squared errors
+\begin{equation}
+SSE=\sum_{i=1}^n e_i^2. \, 
+\end{equation}
+
+Total sum of squares
+\begin{equation}
+SST=\sum_{i=1}^{n}\left(y_{i}-\bar{y}\right)^2
+\end{equation}
+
+Least square sum
+
+
+\end{document}
+
+
+
+
+
+
+
+
